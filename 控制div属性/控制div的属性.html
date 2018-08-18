@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 300px;
+            height: 20px;
+            margin: 50px auto;
+           text-align: center;
+        }
+        li{
+            float: left;
+            width: 40px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #999;
+            list-style-type: none;
+            margin-left: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+        #box{
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+
+    <ul id="list">
+        <li>变宽</li>
+        <li>变高</li>
+        <li>变色</li>
+        <li>隐藏</li>
+        <li>重置</li>
+    </ul>
+
+    <div id="box"></div>
+
+</div>
+
+
+<script>
+
+    var changestyle = function (elem,attr,value) {
+        elem.style[attr] = value;
+    };
+    window.onload = function () {
+
+        var oList = document.getElementById('list'),
+            oli = oList.getElementsByTagName('li'),
+            oBox = document.getElementById('box'),
+            length = oli.length;
+
+        var att = ["width","height","background","display","display"],
+            oval = ["300px","300px","#000","none","block"]
+
+        for ( var i = 0; i<length; i++){
+
+            oli[i].index = i;
+            oli[i].onclick = function () {
+                this.index == length - 1 && (oBox.style.cssText = "");
+                changestyle(oBox, att[this.index], oval[this.index])
+            }
+        }
+
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

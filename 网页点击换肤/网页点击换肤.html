@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: rgb(163,197,168);
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            float: left;
+        }
+        #list1 li{
+            width: 5px;
+            height: 5px;
+            margin-right: 5px;
+        }
+        .green{
+            border: 5px solid green;
+            background-color: green;
+        }
+        .pink{
+            border: 5px solid red;
+            background-color: red;
+        }
+        .black{
+            background-color: black;
+            border: 5px solid black;
+        }
+        #list2 li{
+            width: 100px;
+            text-align: center;
+            height: 20px ;
+            line-height: 20px;
+            color: #fff;
+            background-color: green;
+            border: 1px solid #fff;
+        }
+        div{
+            width: 650px;
+            margin: 20px auto;
+        }
+        .active{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <ul id="list1">
+        <li class="green active"></li>
+        <li class="pink"></li>
+        <li class="black"></li>
+    </ul>
+    <br>
+    <ul id="list2">
+        <li>新闻</li>
+        <li>娱乐</li>
+        <li>体育</li>
+        <li>军事</li>
+        <li>健康</li>
+        <li>社会</li>
+    </ul>
+</div>
+
+
+
+<script>
+
+    var oList1 = document.getElementById('list1'),
+        oBtn = oList1.getElementsByTagName('li'),
+        oBod = document.body,
+        length = oBtn.length,
+        acolor = ["green","red","black"],
+        abg = ["rgb(163,197,168)","pink","#999"],
+        olist2 = document.getElementById('list2'),
+        oLi = olist2.getElementsByTagName('li'),
+        length2 = oLi.length;
+
+    for (var i = 0;i<length;i++){
+
+        oBtn[i].index = i;
+        oBtn[i].onclick = function () {
+            for (var k = 0;k<length;k++){
+                oBtn[k].classList.remove('active');
+            }
+            this.classList.add('active');
+
+            for (var j = 0; j<length2;j++){
+                oLi[j].style.backgroundColor = acolor[this.index];
+            }
+            oBod.style.backgroundColor = abg[this.index]
+        }
+
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

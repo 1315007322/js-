@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            width: 200px;
+            margin: auto;
+        }
+        input{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+    <input type="text" value="北京市">
+    <input type="text" value="朝阳区">
+    <p><button>传参</button></p>
+
+</div>
+
+
+<script>
+
+    var myfn = function (a,b) {
+        alert(a.value);
+        alert(b.value);
+    }
+
+    window.onload =function () {
+        var obtn = document.getElementsByTagName('input')[0],
+            obbn = document.getElementsByTagName('input')[1],
+            obtan = document.getElementsByTagName('button')[0];
+        
+        obtan.onclick = function () {
+            myfn (obtn,obbn);
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

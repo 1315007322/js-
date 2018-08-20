@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提交</title>
+    <style>
+        body,div,ul,li{margin: 0;
+            padding: 0;}
+        #wrap{
+            width: 600px;
+            height: 800px;
+            margin:50px auto;
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+
+        }
+        textarea{
+            width: 100%;
+            resize: none;
+            height: 150px;
+        }
+
+        img{
+            width: 400px;
+            heihgt:100px;
+        }
+        input{
+            float:right;
+        }
+
+        ul{
+            list-style: none;
+            width: 100%;
+            float:left;
+        }
+
+        li{
+            width:500px;
+            height: 40px;
+            margin-bottom: 5px;
+            line-height: 40px;
+            padding: 0 10px;
+            text-align: left;
+            text-indent: 1.5em;
+            border-bottom: 1px dashed #000;
+        }
+        li img{
+            float: left;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        li span{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h3>欣赏图片后，请发表你的评论</h3>
+        <img src="u=2733124077,3730996114&fm=200&gp=0.jpg" alt="">
+
+            <textarea name="text" id="text" ></textarea>
+            <input type="button" value="发表" id="btn">
+
+            <ul>
+            </ul>
+    </div>
+
+    <script>
+
+        //点击 提交按钮 获取textarea的内容并创建一个li 填入内容
+        var otext=document.getElementById("text");
+        var hbtn=document.getElementById("btn");
+        var oul=document.getElementsByTagName("ul")
+        hbtn.onclick=function () {
+            if(otext.value === ''){
+                alert('你眼瞎啊，没打字！')
+            }else{
+                var li = '<li><img src="1.jpg" alt="">'+otext.value+'<span>22.54</span></li>';
+                oul[0].innerHTML += li;
+                otext.value="";
+            }
+
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>

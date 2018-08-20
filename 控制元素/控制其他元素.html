@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        p{
+            text-align: center;
+        }
+        #box{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            border: 1px solid #fff;
+        }
+        .ball{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: red;
+            animation-duration: 5s;
+            animation-timing-function:ease;
+            animation-iteration-count: 2;
+        }
+        .run{
+            animation-name: run;
+            animation-duration: 5s;
+            animation-timing-function:ease;
+            animation-iteration-count: 999;
+        }
+        @keyframes run {
+            0%{
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+            25%{
+                top: 0;
+                left: 290px;
+                background-color: blue;
+            }
+            50%{
+                top: 290px;
+                left: 290px;
+                background-color: pink;
+            }
+            75%{
+                top: 290px;
+                left: 0;
+                background-color: green;
+            }
+            100%{
+                top: 0;
+                left: 0;
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<p><button>开始</button></p>
+<p><button>停止</button></p>
+<div id="box">
+    <div class="ball"></div>
+</div>
+
+<script>
+
+    var oBall = document.getElementsByClassName('ball')[0],
+        oBtn = document.getElementsByTagName('button')[0],
+        oBpn = document.getElementsByTagName('button')[1];
+
+    oBtn.onclick = function () {
+        oBall.classList.add('run');
+    }
+    oBpn.onclick = function () {
+        oBall.classList.remove('run')
+    }
+
+</script>
+</body>
+</html>

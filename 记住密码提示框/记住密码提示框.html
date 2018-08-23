@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            margin: 100px auto;
+            font-size: 12px;
+        }
+        .tips{
+            display: none;
+            margin-top: 5px;
+            padding: 2px;
+            background-color: #ffefa4;
+            border: 1px solid orange;
+        }
+        input{
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="box">
+        <label><input type="checkbox" id="btn">两周内自动登录</label>
+        <div class="tips">为了您的信息安全，请不要再网吧或者公用电脑使用此功能</div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var oLabel = document.getElementsByTagName('label')[0],
+            oTips = document.getElementsByClassName('tips')[0];
+
+        oLabel.onmouseenter = function () {
+            oTips.style.display = 'block'
+        }
+        oLabel.onmouseleave = function () {
+            oTips.style.display = 'none';
+        }
+    }
+
+</script>
+</body>
+</html>
